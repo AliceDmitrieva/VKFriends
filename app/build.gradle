@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.alisadmitrieva.vkfriends"
+        minSdkVersion 18
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "API_URL", "\"https://api.vk.com/method/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+
+    // retrofit + gson
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // rx
+    implementation "io.reactivex.rxjava2:rxjava:${rxjava2_version}"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
+
+    // ui
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+    implementation "com.android.support:design:$support_version"
+
+    //Architecture Components
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'android.arch.paging:runtime:1.0.1'
+}

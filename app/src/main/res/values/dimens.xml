@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="friendImageWidth">100dp</dimen>
+    <dimen name="friendImageHeight">100dp</dimen>
+    <dimen name="friendImageMargin">10dp</dimen>
+    <dimen name="friendNameMarginStart">16dp</dimen>
+    <dimen name="friendNameTextSize">18sp</dimen>
+    <dimen name="footerPadding">12dp</dimen>
+</resources>
